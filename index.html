@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTasks</title>
+    <link rel="stylesheet" href="./src/reset.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/variables.css"
+</head>
+<body>
+    <header>
+        <h1>DevTasks</h1>
+        <p>Organize suas tarefas de desenvolvimento de forma eficiente.</p>
+        <button>🌙</button>
+    </header>
+
+    <main>
+        <section>
+            <h2>Nova Tarefa</h2>
+            <form>
+                <label for="task">Digite sua tarefa</label>
+                <input id="task" type="text" required>
+                <button type="submit">adicionar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Minhas Tarefas</h2>
+            <nav>
+                <button data-filter="all">Todos</button>
+                <button data-filter="pending">Pendentes</button>
+                <button data-filter="completed">Concluídas</button>
+            </nav>
+            <ul></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p> &copy; Projeto DevTasks 2026</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
