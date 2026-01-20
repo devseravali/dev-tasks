@@ -6,38 +6,38 @@
     <title>DevTasks</title>
     <link rel="stylesheet" href="./src/reset.css">
     <link rel="stylesheet" href="./src/style.css">
-    <link rel="stylesheet" href="./src/variables.css"
+    <link rel="stylesheet" href="./src/variables.css">
 </head>
-<body>
-    <header>
-        <h1>DevTasks</h1>
-        <p>Organize suas tarefas de desenvolvimento de forma eficiente.</p>
-        <button>🌙</button>
+<body class="theme-dark">
+    <header class="container-header">
+        <h1 class="titulo">DevTasks</h1>
+        <p class="subtitulo">Organize suas tarefas de desenvolvimento de forma eficiente.</p>
+        <button class="alterar-tema">🌙</button>
     </header>
 
     <main>
-        <section>
-            <h2>Nova Tarefa</h2>
+        <section class="container-tarefas">
+            <h2 class="nova-tarefa">Nova Tarefa</h2>
             <form>
-                <label for="task">Digite sua tarefa</label>
-                <input id="task" type="text" required>
-                <button type="submit">adicionar</button>
+                <label class="tarefa" for="task">Digite sua tarefa</label>
+                <input  class="input-tarefa" ="task" type="text" required>
+                <button class="button-adicionar" type="submit">adicionar</button>
             </form>
         </section>
 
-        <section>
-            <h2>Minhas Tarefas</h2>
-            <nav>
-                <button data-filter="all">Todos</button>
-                <button data-filter="pending">Pendentes</button>
-                <button data-filter="completed">Concluídas</button>
+        <section class="container-minhas-tarefas">
+            <h2 class="minhas-tarefas">Minhas Tarefas</h2>
+            <nav class="nav">
+                <button class="todos" data-filter="all">Todos</button>
+                <button  class="pendentes" data-filter="pending">Pendentes</button>
+                <button class="concluidas" data-filter="completed">Concluídas</button>
             </nav>
-            <ul></ul>
+            <ul class="lista-de-tarefas"></ul>
         </section>
     </main>
 
-    <footer>
-        <p> &copy; Projeto DevTasks 2026</p>
+    <footer class="footer">
+        <p class="direitos"> &copy; Projeto DevTasks 2026</p>
     </footer>
 
     <script src="index.js"></script>
