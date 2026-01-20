@@ -1,0 +1,67 @@
+:root body.theme-light {
+    /* ===== CORES BASE ===== */
+    --bg-body: #f5f7fb;
+    --bg-header: #ffffff;
+    --bg-card: #ffffff;
+    --bg-input: #f0f2f7;
+    --bg-button: #2563eb;
+    --bg-button-hover: #1e40af;
+    --bg-filter: #e5e7eb;
+    --bg-filter-active: #2563eb;
+
+    /* ===== TEXTO ===== */
+    --text-title: #0f172a;
+    --text-subtitle: #334155;
+    --text-body: #1f2937;
+    --text-muted: #6b7280;
+    --text-button: #ffffff;
+
+    /* ===== BORDAS ===== */
+    --border-color: #d1d5db;
+    --border-radius: 8px;
+
+    /* ===== STATUS ===== */
+    --color-pending: #f59e0b;
+    --color-completed: #22c55e;
+
+    /* ===== SOMBRAS ===== */
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+    /* ===== TRANSIÇÃO ===== */
+    --transition: 0.3s ease;
+}
+
+:root body.theme-dark {
+    /* ===== CORES BASE ===== */
+    --bg-body: #0b1020;
+    --bg-header: #0f172a;
+    --bg-card: #111827;
+    --bg-input: #1e293b;
+    --bg-button: #38bdf8;
+    --bg-button-hover: #0ea5e9;
+    --bg-filter: #1e293b;
+    --bg-filter-active: #38bdf8;
+
+    /* ===== TEXTO ===== */
+    --text-title: #e5e7eb;
+    --text-subtitle: #94a3b8;
+    --text-body: #cbd5e1;
+    --text-muted: #64748b;
+    --text-button: #020617;
+
+    /* ===== BORDAS ===== */
+    --border-color: #334155;
+    --border-radius: 8px;
+
+    /* ===== STATUS ===== */
+    --color-pending: #fbbf24;
+    --color-completed: #4ade80;
+
+    /* ===== SOMBRAS ===== */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.6);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.7);
+
+    /* ===== TRANSIÇÃO ===== */
+    --transition: 0.3s ease;
+}
