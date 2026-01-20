@@ -1,4 +1,4 @@
-:root body.theme-light {
+:root {
     /* ===== CORES BASE ===== */
     --bg-body: #f5f7fb;
     --bg-header: #ffffff;
@@ -32,7 +32,7 @@
     --transition: 0.3s ease;
 }
 
-:root body.theme-dark {
+body.theme-dark {
     /* ===== CORES BASE ===== */
     --bg-body: #0b1020;
     --bg-header: #0f172a;
