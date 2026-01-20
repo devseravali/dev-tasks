@@ -1,0 +1,144 @@
+body {
+    background: var(--bg-body);
+    color: var(--text-body);
+    font-family: 'Courier New', Courier, monospace;
+    transition: background var(--transition), color var(--transition);
+}
+
+.container-header {
+    background: var(--bg-header);
+    box-shadow: var(--shadow-md);
+    padding: 20px;
+}
+
+.titulo {
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem 0;
+    color: var(--text-title);
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    color: var(--text-subtitle);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.separador {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.alterar-tema {
+    background: var(--bg-button);
+    color: var(--text-button);
+    border: none;
+    padding: 0.5rem 0.5rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container-tarefas {
+    background: var(--bg-card);
+    color: var(--text-muted);
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.nova-tarefa {
+    font-size: 1.5rem;
+    color: var(--text-title);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 1rem 0;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.input-tarefa {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.9rem;
+    font-size: 1rem;
+}
+
+.button-adicionar {
+    border: none;
+    background: var(--bg-button);
+    padding: 0.9rem 0.9rem;
+    border-radius: 3rem;
+    font-weight: 600;
+}
+
+.container-header, .container-tarefas, .container-minhas-tarefas, .footer {
+    box-shadow: var(--shadow-sm);
+}
+
+.container-minhas-tarefas {
+    background: var(--bg-card);
+    color: var(--text-muted);
+    padding: 2rem;
+    margin:1rem auto;
+}
+
+.minhas-tarefas {
+    font-size: 1.5rem;
+    color: var(--text-title);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.todos, 
+.pendentes, 
+.concluidas {
+    text-align: center;
+    border: none;
+    background-color: var(--bg-button);
+    color: var(--text-button);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.lista-de-tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer {
+    background: var(--bg-body);
+    color: var(--text-subtitle);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    display: flex;
+}
+
+.direitos {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 2rem 0;
+}
