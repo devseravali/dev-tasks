@@ -58,13 +58,69 @@ body {
     font-weight: 700;
 }
 
+.tarefa-label {
+    font-size: 1.2rem;
+    color: var(--text-subtitle);
+    margin-bottom: 0.5rem;
+}
+
 .tarefa {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 1rem 0;
-    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.7rem;
+    margin-bottom: 0.3rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background: var(--bg-body);
     color: var(--text-muted);
+    font-weight: 600;
+    transition: opacity var(--transition);
+    max-width: 320px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tarefa.concluidas {
+    opacity: 0.6;
+}
+
+.tarefa.concluidas .texto-tarefa {
+    text-decoration: line-through;
+    color: var(--text-subtitle);
+}
+.acoes {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.btn-concluir,
+.btn-remover {
+    border: none;
+    background: var(--bg-button);
+    color: var(--text-button);
+    padding: 0.4rem 0.6rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity var(--transition);
+}
+
+.btn-concluir:hover,
+.btn-remover:hover {
+    opacity: 0.8;
+    background: var(--bg-button);
+}
+
+.vazia {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 2rem 0;    
+    font-weight: 600;
 }
 
 .input-tarefa {
@@ -83,7 +139,10 @@ body {
     font-weight: 600;
 }
 
-.container-header, .container-tarefas, .container-minhas-tarefas, .footer {
+.container-header,
+.container-tarefas,
+.container-minhas-tarefas,
+.footer {
     box-shadow: var(--shadow-sm);
 }
 
@@ -91,7 +150,7 @@ body {
     background: var(--bg-card);
     color: var(--text-muted);
     padding: 2rem;
-    margin:1rem auto;
+    margin: 1rem auto;
 }
 
 .minhas-tarefas {
@@ -109,8 +168,8 @@ body {
     padding: 1rem 0;
 }
 
-.todos, 
-.pendentes, 
+.todos,
+.pendentes,
 .concluidas {
     text-align: center;
     border: none;
