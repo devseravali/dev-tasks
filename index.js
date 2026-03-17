@@ -7,88 +7,115 @@ const btnFiltros = document.querySelectorAll('.nav button');
 let tarefas = [];
 let filtroAtivo = 'all';
 
+const Storage = {
+  salvar(tarefas) {
+    localStorage.setItem('devtasks', JSON.stringify(tarefas));
+  },
+  carregar() {
+    const dados = localStorage.getItem('devtasks');
+    return dados ? JSON.parse(dados) : [];
+  },
+};
+
+const TarefasService = {
+  criar(texto) {
+    return {
+      id: Date.now(),
+      texto,
+      concluida: false,
+    };
+  },
+  alternarConcluida(tarefas, id) {
+    return tarefas.map((tarefa) =>
+      tarefa.id === id ? { ...tarefa, concluida: !tarefa.concluida } : tarefa,
+    );
+  },
+  remover(tarefas, id) {
+    return tarefas.filter((tarefa) => tarefa.id !== id);
+  },
+  filtrar(tarefas, filtro) {
+    const mapa = {
+      pending: tarefas.filter((tarefa) => !tarefa.concluida),
+      completed: tarefas.filter((tarefa) => tarefa.concluida),
+      all: tarefas,
+    };
+    return mapa[filtro] ?? tarefas;
+  },
+};
+
+const UI = {
+  renderizarTarefas(tarefas) {
+    listaTarefas.innerHTML = '';
+    if (!tarefas.length) {
+      listaTarefas.innerHTML =
+        '<p class="vazia"> Nenhuma tarefa encontrada </p>';
+      return;
+    }
+    tarefas.forEach((tarefa) => {
+      listaTarefas.appendChild(this.criarElementoTarefa(tarefa));
+    });
+  },
+  criarElementoTarefa(tarefa) {
+    const li = document.createElement('li');
+    li.classList.add('tarefa');
+    if (tarefa.concluida) li.classList.add('concluida');
+    li.innerHTML = `
+      <span class="texto-tarefa">${tarefa.texto}</span>
+      <div class="acoes">
+        <button class="btn-concluir" data-id="${tarefa.id}">${tarefa.concluida ? 'Concluída' : 'Concluir'}</button>
+        <button class="btn-remover" data-id="${tarefa.id}">Remover</button>
+      </div>
+    `;
+    return li;
+  },
+  atualizarTema(isDark) {
+    document.body.classList.toggle('theme-dark', isDark);
+    btnTema.textContent = isDark ? '🌙' : '☀️';
+  },
+};
+
+function atualizar() {
+  const filtradas = TarefasService.filtrar(tarefas, filtroAtivo);
+  UI.renderizarTarefas(filtradas);
+  Storage.salvar(tarefas);
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  const tarefasTexto = inputTarefa.value.trim();
-
-  if (!tarefasTexto) return;
-
-  const novaTarefa = {
-    id: Date.now(),
-    texto: tarefasTexto,
-    concluida: false,
-  };
-
-  tarefas.push(novaTarefa);
+  const texto = inputTarefa.value.trim();
+  if (!texto) return;
+  tarefas.push(TarefasService.criar(texto));
   inputTarefa.value = '';
-
-  salvarTarefas();
-  renderizarTarefas();
+  atualizar();
 });
 
-function renderizarTarefas() {
-  const tarefasFiltradas = filtrar();
-  listaTarefas.innerHTML = '';
-  if (tarefasFiltradas.length === 0) {
-    listaTarefas.innerHTML = '<p class="vazia"> Nenhuma tarefa encontrada </p>';
+listaTarefas.addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-id]');
+  if (!btn) return;
+  const id = Number(btn.dataset.id);
+  if (btn.classList.contains('btn-concluir')) {
+    tarefas = TarefasService.alternarConcluida(tarefas, id);
+    atualizar();
     return;
   }
-  tarefasFiltradas.forEach((tarefa) => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-            <span class="tarefa-texto">${tarefa.texto}</span>
-            <button class="btn-concluir" data-id="${tarefa.id}">Concluir</button>
-        `;
-    listaTarefas.appendChild(li);
-  });
-}
-
-function filtrar() {
-  if (filtroAtivo === 'pending') {
-    return tarefas.filter((tarefa) => !tarefa.concluida);
+  if (btn.classList.contains('btn-remover')) {
+    tarefas = TarefasService.remover(tarefas, id);
+    atualizar();
+    return;
   }
-  if (filtroAtivo === 'completed') {
-    return tarefas.filter((tarefa) => tarefa.concluida);
-  }
-  return tarefas;
-}
+});
 
 btnFiltros.forEach((btn) => {
   btn.addEventListener('click', () => {
     filtroAtivo = btn.dataset.filter;
-    renderizarTarefas();
+    atualizar();
   });
 });
 
-listaTarefas.addEventListener('click', (e) => {
-  const id = Number(e.target.dataset.id);
-
-  if (e.target.classList.contains('btn-concluir')) {
-    const tarefa = tarefas.find((tarefa) => tarefa.id === id);
-    tarefa.concluida = !tarefa.concluida;
-
-    salvarTarefas();
-    renderizarTarefas();
-  }
-});
-
 btnTema.addEventListener('click', () => {
-  document.body.classList.toggle('theme-dark');
-  btnTema.textContent = document.body.classList.contains('theme-dark')
-    ? '🌙'
-    : '☀️';
+  const isDark = document.body.classList.toggle('theme-dark');
+  UI.atualizarTema(isDark);
 });
 
-function salvarTarefas() {
-  localStorage.setItem('devtasks', JSON.stringify(tarefas));
-}
-
-function carregarTarefas() {
-  const dados = localStorage.getItem('devtasks');
-
-  if (dados) tarefas = JSON.parse(dados);
-}
-
-carregarTarefas();
-renderizarTarefas();
+tarefas = Storage.carregar();
+atualizar();
