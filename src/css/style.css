@@ -1,13 +1,21 @@
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--bg-body);
     color: var(--text-body);
-    font-family: 'Courier New', Courier, monospace;
-    transition: background var(--transition), color var(--transition);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.container-header,
+.container-tarefas,
+.container-minhas-tarefas,
+.footer {
+    box-shadow: var(--shadow-sm);
 }
 
 .container-header {
     background: var(--bg-header);
-    box-shadow: var(--shadow-md);
     padding: 20px;
 }
 
@@ -36,10 +44,8 @@ body {
     background: var(--bg-button);
     color: var(--text-button);
     border: none;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem;
     border-radius: 50%;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 }
 
@@ -49,6 +55,10 @@ body {
     padding: 20px;
     margin: 20px auto;
     text-align: center;
+}
+
+form {
+    width: 100%;
 }
 
 .nova-tarefa {
@@ -62,88 +72,28 @@ body {
     font-size: 1.2rem;
     color: var(--text-subtitle);
     margin-bottom: 0.5rem;
-}
-
-.tarefa {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.4rem 0.7rem;
-    margin-bottom: 0.3rem;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    background: var(--bg-body);
-    color: var(--text-muted);
-    font-weight: 600;
-    transition: opacity var(--transition);
-    max-width: 320px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.tarefa.concluidas {
-    opacity: 0.6;
-}
-
-.tarefa.concluidas .texto-tarefa {
-    text-decoration: line-through;
-    color: var(--text-subtitle);
-}
-.acoes {
-    display: flex;
-    gap: 0.5rem;
-    flex-shrink: 0;
-    margin-left: 1rem;
-}
-
-.btn-concluir,
-.btn-remover {
-    border: none;
-    background: var(--bg-button);
-    color: var(--text-button);
-    padding: 0.4rem 0.6rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: opacity var(--transition);
-}
-
-.btn-concluir:hover,
-.btn-remover:hover {
-    opacity: 0.8;
-    background: var(--bg-button);
-}
-
-.vazia {
-    text-align: center;
-    color: var(--text-muted);
-    padding: 2rem 0;    
-    font-weight: 600;
+    display: block;
 }
 
 .input-tarefa {
+    width: 100%;
     background-color: #fff;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: 0.9rem;
     font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 .button-adicionar {
+    width: 100%;
     border: none;
     background: var(--bg-button);
-    padding: 0.9rem 0.9rem;
+    color: var(--text-button);
+    padding: 0.9rem;
     border-radius: 3rem;
     font-weight: 600;
-}
-
-.container-header,
-.container-tarefas,
-.container-minhas-tarefas,
-.footer {
-    box-shadow: var(--shadow-sm);
+    cursor: pointer;
 }
 
 .container-minhas-tarefas {
@@ -166,12 +116,12 @@ body {
     justify-content: center;
     gap: 1rem;
     padding: 1rem 0;
+    flex-wrap: wrap;
 }
 
 .todos,
 .pendentes,
 .concluidas {
-    text-align: center;
     border: none;
     background-color: var(--bg-button);
     color: var(--text-button);
@@ -187,17 +137,79 @@ body {
     margin: 0;
 }
 
+.tarefa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 420px;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background: var(--bg-body);
+    font-weight: 600;
+    transition: opacity var(--transition);
+    word-break: break-word;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texto-tarefa {
+    text-align: center;
+    word-break: break-word;
+}
+
+.acoes {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-concluir,
+.btn-remover {
+    border: none;
+    background: var(--bg-button);
+    color: var(--text-button);
+    padding: 0.4rem 0.6rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity var(--transition);
+}
+
+.btn-concluir:hover,
+.btn-remover:hover {
+    opacity: 0.8;
+}
+
+.tarefa.concluidas {
+    opacity: 0.6;
+}
+
+.tarefa.concluidas .texto-tarefa {
+    text-decoration: line-through;
+    color: var(--text-subtitle);
+}
+
+.vazia {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 2rem 0;
+    font-weight: 600;
+}
+
 .footer {
     background: var(--bg-body);
+    border: none;
     color: var(--text-subtitle);
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
-    display: flex;
+    text-align: center;
 }
 
 .direitos {
     font-size: 0.9rem;
     font-weight: 500;
-    padding: 2rem 0;
 }
