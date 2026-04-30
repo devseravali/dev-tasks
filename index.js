@@ -13,7 +13,11 @@ const Storage = {
   },
   carregar() {
     const dados = localStorage.getItem('devtasks');
-    return dados ? JSON.parse(dados) : [];
+    try {
+      return JSON.parse(dados);
+    } catch {
+      return [];
+    }
   },
 };
 
@@ -83,6 +87,26 @@ function atualizar() {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const texto = inputTarefa.value.trim();
+  const tamanhoMinimo = 3;
+  const tamanhoMaximo = 200;
+  const tarefaDuplicada = tarefas.some((t) => t.texto.toLowerCase() === texto.toLowerCase());
+
+  if (tarefaDuplicada) {
+    inputTarefa.setCustomValidity('Já existe uma tarefa com esse texto.');
+    inputTarefa.reportValidity();
+    return;
+  }
+
+  if (texto.length < tamanhoMinimo) {
+    inputTarefa.setCustomValidity(`A tarefa deve conter ao menos ${tamanhoMinimo} caracteres.`);
+    inputTarefa.reportValidity();
+    return;
+  }
+  if (texto.length > tamanhoMaximo) {
+    inputTarefa.setCustomValidity(`A tarefa deve conter no máximo ${tamanhoMaximo} caracteres.`);
+    inputTarefa.reportValidity();
+    return;
+  }
   if (!texto) return;
   tarefas.push(TarefasService.criar(texto));
   inputTarefa.value = '';
