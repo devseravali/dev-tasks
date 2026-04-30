@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 
     .container-header,
     .container-tarefas,
@@ -70,4 +70,78 @@
     .btn-remover {
         font-size: 1.1rem;
     }
+}
+@media (min-width: 768px) {
+    .container-header,
+    .container-tarefas,
+    .container-minhas-tarefas,
+    .footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .subtitulo {
+        font-size: 1.25rem;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .separador {
+        margin: 1rem 0;
+    }
+
+    .container-tarefas,
+    .container-minhas-tarefas {
+        padding: 0.5rem;
+        margin: 0;
+    }
+
+    .input-tarefa {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .button-adicionar {
+        padding: 0.9rem;
+        font-size: 1.1rem;
+    }
+
+    .nav {
+        display: flex;
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+    }
+
+    .lista-de-tarefas {
+        margin: 0.5rem 0 0 0;
+        padding: 0.5rem 0;
+    }
+
+    .texto-tarefa {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .tarefa {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .tarefa .texto-tarefa {
+        font-size: 1.25rem;
+    }
+
+    .btn-concluir,
+    .btn-remover {
+        font-size: 1.25rem;
+    }
+
 }
