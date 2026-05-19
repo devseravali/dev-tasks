@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevTasks</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/variables.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/responsivo.css">
 
 </head>
+
 <body class="theme-dark">
     <header class="container-header">
         <h1 class="titulo">DevTasks</h1>
         <p class="subtitulo">Organize suas tarefas de desenvolvimento de forma eficiente</p>
         <div class="separador">
-        <button class="alterar-tema">🌙</button>
+            <button class="alterar-tema"><i class="fa-solid fa-moon"></i></button>
         </div>
     </header>
 
@@ -25,7 +28,7 @@
             <h2 class="nova-tarefa">Nova Tarefa</h2>
             <form>
                 <label class="tarefa-label" for="task">Digite sua tarefa</label>
-                <input  class="input-tarefa" id="task" type="text" required>
+                <input class="input-tarefa" id="task" type="text" required>
                 <button class="button-adicionar" type="submit">adicionar</button>
             </form>
         </section>
@@ -34,7 +37,7 @@
             <h2 class="minhas-tarefas">Minhas Tarefas</h2>
             <nav class="nav">
                 <button class="todos" data-filter="all">Todos</button>
-                <button  class="pendentes" data-filter="pending">Pendentes</button>
+                <button class="pendentes" data-filter="pending">Pendentes</button>
                 <button class="concluidas" data-filter="completed">Concluídas</button>
             </nav>
             <ul class="lista-de-tarefas"></ul>
@@ -47,4 +50,5 @@
 
     <script src="index.js"></script>
 </body>
+
 </html>
