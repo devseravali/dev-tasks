@@ -71,14 +71,16 @@
         font-size: 1.1rem;
     }
 }
+
 @media (min-width: 768px) {
+
     .container-header,
     .container-tarefas,
     .container-minhas-tarefas,
     .footer {
         width: 100%;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: minmax(2fr 1fr);
         align-items: center;
     }
 
@@ -121,6 +123,8 @@
     }
 
     .lista-de-tarefas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         margin: 0.5rem 0 0 0;
         padding: 0.5rem 0;
     }
@@ -142,6 +146,90 @@
     .btn-concluir,
     .btn-remover {
         font-size: 1.25rem;
+    }
+
+    .footer {
+        margin-top: 1rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .container-header,
+    .container-tarefas,
+    .container-minhas-tarefas,
+    .footer {
+        display: grid;
+        grid-template-columns: minmax(2fr 1fr);
+        align-items: center;
+    }
+
+    .titulo {
+        font-size: 2rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .subtitulo {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .btn-concluir,
+    .btn-remover {
+        font-size: 1.25rem;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+
+    .input-tarefa {
+        padding: 1rem;
+        font-size: 1.25rem;
+    }
+
+    .button-adicionar {
+        padding: 0.9rem;
+        font-size: 1.25rem;
+    }
+
+    .nav {
+        display: flex;
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+    }
+
+    .lista-de-tarefas {
+        display: grid;
+        grid-template-columns: repeat(3, 2fr);
+        margin: 0.5rem 0 0 0;
+        padding: 0.5rem 0;
+    }
+
+    .texto-tarefa {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .tarefa {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .tarefa .texto-tarefa {
+        font-size: 1.5rem;
+    }
+
+    .todos .pendentes .concluidas {
+        display: flex;
+        gap: 2rem;
+
+    }
+
+    .footer {
+        margin-top: 2rem;
     }
 
 }

@@ -44,7 +44,11 @@ body {
     background: var(--bg-button);
     color: var(--text-button);
     border: none;
-    padding: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -212,4 +216,18 @@ form {
 .direitos {
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+.fa-sun {
+    font-size: 1.2rem;
+    color: #fde31e;
+}
+
+.fa-moon {
+    font-size: 1.2rem;
+    color: #f1f5f9;
+}
+
+.alterar-tema:hover {
+    opacity: 0.8;
 }
