@@ -74,7 +74,7 @@ const UI = {
   },
   atualizarTema(isDark) {
     document.body.classList.toggle('theme-dark', isDark);
-    btnTema.textContent = isDark ? '🌙' : '☀️';
+    btnTema.innerHTML = isDark ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
   },
 };
 
