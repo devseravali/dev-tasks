@@ -51,10 +51,10 @@ Este projeto teve como objetivo aprofundar conhecimentos em:
 # 🖥️ Preview
 
 ## 🌙 Tema Dark
-![Preview Dark](./images/dark-modo.png)
+![Preview Dark](./assets/dark-modo.png)
 
 ## ☀️ Tema Light
-![Preview Light](./images/light-modo.png)
+![Preview Light](./assets/light-modo.png)
 
 ---
 
