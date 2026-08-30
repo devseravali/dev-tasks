@@ -1,9 +1,11 @@
 # Dev Tasks
 Aplicação de gerenciamento de tarefas desenvolvida para praticar e consolidar conceitos de desenvolvimento Front-End.
-O projeto permite organizar tarefas em uma interface simples e interativa, servindo também como base para a implementação de novos recursos e melhorias ao longo da evolução do projeto.
+O projeto apresenta uma interface simples e responsiva para criação, organização, atualização e conclusão de tarefas, servindo como base para minha evolução prática em desenvolvimento web.
 
 ## Sobre o projeto
-O **Dev Tasks** foi desenvolvido com foco na criação de uma aplicação de gerenciamento de tarefas utilizando tecnologias do ecossistema Front-End. O projeto faz parte da minha evolução prática como desenvolvedora e continuará recebendo melhorias conforme novos conceitos e tecnologias forem estudados.
+O **Dev Tasks** foi desenvolvido inicialmente utilizando tecnologias fundamentais do desenvolvimento Front-End.
+A aplicação possui uma interface de gerenciamento de tarefas com suporte a diferentes estados visuais e modos de exibição, incluindo **modo claro e modo escuro**.
+O projeto faz parte da minha evolução prática como desenvolvedora e poderá receber novas melhorias e tecnologias ao longo do seu desenvolvimento.
 
 ## Funcionalidades
 * Criação de tarefas
@@ -13,74 +15,84 @@ O **Dev Tasks** foi desenvolvido com foco na criação de uma aplicação de ger
 * Marcação de tarefas como concluídas
 * Organização das tarefas
 * Interface responsiva
+* Modo claro
+* Modo escuro
 
 ## Tecnologias
-* React
-* TypeScript
-* JavaScript
 * HTML5
 * CSS3
+* JavaScript
 * Git
 * GitHub
 
-## Estrutura do Projeto
-```text id="q7k1c9"
+## Estrutura atual do projeto
+```text
 dev-tasks/
-├── public/
+├── assets/
+│   ├── dark-modo.png
+│   └── light-modo.png
+│
 ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── hooks/
-│   ├── services/
-│   ├── styles/
-│   ├── types/
-│   └── utils/
-├── package.json
-├── tsconfig.json
+│   └── css/
+│       ├── reset.css
+│       ├── responsivo.css
+│       ├── style.css
+│       └── variables.css
+│
+├── index.html
+├── index.js
 └── README.md
 ```
-> A estrutura acima pode ser ajustada conforme a organização atual do projeto.
+
+A estrutura apresentada corresponde à versão atual do projeto e poderá ser modificada conforme novas tecnologias e funcionalidades forem incorporadas.
 
 ## Como executar
+
 ### 1. Clone o repositório
-```bash id="v9x2r4"
+
+```bash
 git clone https://github.com/devseravali/dev-tasks.git
 ```
 
 ### 2. Acesse a pasta
-```bash id="m8f3kp"
+
+```bash
 cd dev-tasks
 ```
 
-### 3. Instale as dependências
-```bash id="d1n6qa"
-npm install
-```
-
-### 4. Execute o projeto
-```bash id="r4w8zt"
-npm run dev
-```
-A aplicação estará disponível no endereço informado pelo Vite no terminal.
+### 3. Execute o projeto
+Como o projeto atual utiliza HTML, CSS e JavaScript, basta abrir o arquivo `index.html` no navegador.
+Também é possível utilizar uma extensão como **Live Server** no VS Code para executar a aplicação durante o desenvolvimento.
 
 ## Objetivos de aprendizado
-Este projeto foi utilizado para praticar:
-* Componentização
-* Props
-* Hooks
-* Gerenciamento de estado
-* TypeScript
-* Formulários
-* Manipulação de listas
-* Eventos
+Este projeto foi desenvolvido para praticar conceitos fundamentais de desenvolvimento Front-End, incluindo:
+* Estruturação de páginas com HTML
+* Estilização com CSS
 * Responsividade
+* Organização de arquivos CSS
+* Variáveis CSS
+* Reset de estilos
+* JavaScript
+* Manipulação do DOM
+* Eventos
+* Manipulação de tarefas
 * Organização de código
-* Reutilização de componentes
+* Git e GitHub
 
-## Próximas melhorias
-O projeto continuará sendo atualizado para incorporar novos conhecimentos e recursos.
-Possíveis evoluções:
-* [ ] Persistência das tarefas
+## Evolução do projeto
+
+O **Dev Tasks** é um projeto em evolução.
+A versão atual representa sua implementação inicial utilizando HTML, CSS e JavaScript. A proposta é continuar aprimorando a aplicação conforme novos conhecimentos forem adquiridos, podendo posteriormente incorporar novas tecnologias, arquitetura e funcionalidades.
+
+Entre as possibilidades de evolução estão:
+
+* [ ] Migração para React
+* [ ] Migração para TypeScript
+* [ ] Refatoração da arquitetura
+* [ ] Componentização
+* [ ] Persistência de dados
+* [ ] Banco de dados
+* [ ] API
 * [ ] Filtros por status
 * [ ] Busca de tarefas
 * [ ] Categorias
@@ -89,10 +101,13 @@ Possíveis evoluções:
 * [ ] Testes automatizados
 * [ ] Melhorias de acessibilidade
 * [ ] Melhorias de UI/UX
+* [ ] Deploy de uma nova versão
 
-## Evolução do projeto
-O **Dev Tasks** não é considerado um projeto finalizado. A proposta é utilizá-lo como uma aplicação em evolução, permitindo aplicar novos conhecimentos sem a necessidade de criar um novo repositório para cada etapa.
-Dessa forma, novas funcionalidades e melhorias serão incorporadas ao projeto conforme minha evolução técnica.
+As funcionalidades futuras serão implementadas conforme o planejamento e a evolução do projeto.
+
+## Status
+**Em desenvolvimento**
+O projeto não é considerado finalizado. A versão atual funciona como uma base para futuras melhorias técnicas e funcionais.
 
 ## Autora
 **Aline Seravali — Dev Seravali**
@@ -107,4 +122,6 @@ https://www.linkedin.com/in/dev-seravali/
 **Portfólio:**
 https://devseravali.com
 
-Se você gostou do projeto, deixe uma estrela no repositório.
+---
+
+Se o projeto foi útil para você ou você gostou da proposta, considere deixar uma estrela no repositório.
