@@ -1,293 +1,110 @@
-# 🚀 DevTasks — Gerenciador de Tarefas Moderno
+# Dev Tasks
+Aplicação de gerenciamento de tarefas desenvolvida para praticar e consolidar conceitos de desenvolvimento Front-End.
+O projeto permite organizar tarefas em uma interface simples e interativa, servindo também como base para a implementação de novos recursos e melhorias ao longo da evolução do projeto.
 
-<div align="center">
+## Sobre o projeto
+O **Dev Tasks** foi desenvolvido com foco na criação de uma aplicação de gerenciamento de tarefas utilizando tecnologias do ecossistema Front-End. O projeto faz parte da minha evolução prática como desenvolvedora e continuará recebendo melhorias conforme novos conceitos e tecnologias forem estudados.
 
-## ✨ Organize suas tarefas com praticidade e estilo
+## Funcionalidades
+* Criação de tarefas
+* Listagem de tarefas
+* Atualização de tarefas
+* Exclusão de tarefas
+* Marcação de tarefas como concluídas
+* Organização das tarefas
+* Interface responsiva
 
-Aplicação web desenvolvida com **HTML, CSS e JavaScript Vanilla**, focada em boas práticas de desenvolvimento front-end, manipulação de DOM, persistência de dados e experiência do usuário.
+## Tecnologias
+* React
+* TypeScript
+* JavaScript
+* HTML5
+* CSS3
+* Git
+* GitHub
 
-<img src="https://img.shields.io/badge/JavaScript-Vanilla-yellow?style=for-the-badge&logo=javascript" />
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-<img src="https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Responsivo-Sim-blue?style=for-the-badge" />
-
-</div>
-
----
-
-# 📌 Sobre o Projeto
-
-O **DevTasks** é uma aplicação de gerenciamento de tarefas criada para praticar conceitos fundamentais do desenvolvimento web moderno sem o uso de frameworks.
-
-O projeto foi desenvolvido com foco em:
-
-- Estruturação limpa de código
-- Organização modular em JavaScript
-- Manipulação eficiente do DOM
-- Persistência de dados com localStorage
-- Experiência do usuário (UX)
-- Tema Dark/Light
-- Validações robustas
-- Arquitetura simples e escalável
-
----
-
-# 🎯 Objetivos do Projeto
-
-Este projeto teve como objetivo aprofundar conhecimentos em:
-
-- JavaScript puro (Vanilla JS)
-- Eventos e manipulação do DOM
-- Persistência de dados no navegador
-- Organização de código em serviços
-- Boas práticas de UI/UX
-- Responsividade
-- Validação de formulários
-- Programação orientada à organização modular
-
----
-
-# 🖥️ Preview
-
-## 🌙 Tema Dark
-![Preview Dark](./assets/dark-modo.png)
-
-## ☀️ Tema Light
-![Preview Light](./assets/light-modo.png)
-
----
-
-# ⚙️ Funcionalidades
-
-## ✅ Gerenciamento de tarefas
-
-- Adicionar tarefas
-- Remover tarefas
-- Marcar tarefas como concluídas
-- Alternar status entre pendente/concluída
-
-## 🔎 Sistema de filtros
-
-- Todas as tarefas
-- Pendentes
-- Concluídas
-
-## 🎨 Personalização
-
-- Alternância entre tema dark/light
-- Interface moderna e intuitiva
-
-## 💾 Persistência de dados
-
-As tarefas permanecem salvas mesmo após atualizar ou fechar o navegador utilizando:
-
-- localStorage API
-
-## 🛡️ Validações
-
-- Mínimo de 3 caracteres
-- Máximo de 200 caracteres
-- Bloqueio de tarefas duplicadas
-- Validação nativa HTML5 com `setCustomValidity`
-
----
-
-# 🧠 Conceitos Aplicados
-
-## 📦 Organização Modular
-
-O projeto foi estruturado utilizando objetos como namespaces:
-
-```javascript
-const Storage = {};
-const TarefasService = {};
-const UI = {};
-```
-
-Essa abordagem melhora:
-
-- Escalabilidade
-- Legibilidade
-- Manutenção do código
-
----
-
-## ⚡ Event Delegation
-
-Utilização de **event delegation** para lidar com elementos dinâmicos da lista de tarefas:
-
-```javascript
-listaTarefas.addEventListener("click", (event) => {
-  // tratamento dos botões
-});
-```
-
-Benefícios:
-
-- Melhor performance
-- Menos listeners
-- Código mais limpo
-
----
-
-## 💾 Persistência com localStorage
-
-```javascript
-localStorage.setItem("tarefas", JSON.stringify(tarefas));
-```
-
-Permite manter os dados do usuário salvos localmente.
-
----
-
-# 🏗️ Estrutura do Projeto
-
-```bash
+## Estrutura do Projeto
+```text id="q7k1c9"
 dev-tasks/
-│
-├── index.html
-├── style.css
-├── index.js
-└── assets/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── services/
+│   ├── styles/
+│   ├── types/
+│   └── utils/
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+> A estrutura acima pode ser ajustada conforme a organização atual do projeto.
+
+## Como executar
+### 1. Clone o repositório
+```bash id="v9x2r4"
+git clone https://github.com/devseravali/dev-tasks.git
 ```
 
----
+### 2. Acesse a pasta
+```bash id="m8f3kp"
+cd dev-tasks
+```
 
-# 🧩 Arquitetura da Aplicação
+### 3. Instale as dependências
+```bash id="d1n6qa"
+npm install
+```
 
-## 📁 Storage
+### 4. Execute o projeto
+```bash id="r4w8zt"
+npm run dev
+```
+A aplicação estará disponível no endereço informado pelo Vite no terminal.
 
-Responsável por:
+## Objetivos de aprendizado
+Este projeto foi utilizado para praticar:
+* Componentização
+* Props
+* Hooks
+* Gerenciamento de estado
+* TypeScript
+* Formulários
+* Manipulação de listas
+* Eventos
+* Responsividade
+* Organização de código
+* Reutilização de componentes
 
-- Salvar tarefas
-- Carregar tarefas
-- Comunicação com localStorage
+## Próximas melhorias
+O projeto continuará sendo atualizado para incorporar novos conhecimentos e recursos.
+Possíveis evoluções:
+* [ ] Persistência das tarefas
+* [ ] Filtros por status
+* [ ] Busca de tarefas
+* [ ] Categorias
+* [ ] Prioridades
+* [ ] Drag and drop
+* [ ] Testes automatizados
+* [ ] Melhorias de acessibilidade
+* [ ] Melhorias de UI/UX
 
----
+## Evolução do projeto
+O **Dev Tasks** não é considerado um projeto finalizado. A proposta é utilizá-lo como uma aplicação em evolução, permitindo aplicar novos conhecimentos sem a necessidade de criar um novo repositório para cada etapa.
+Dessa forma, novas funcionalidades e melhorias serão incorporadas ao projeto conforme minha evolução técnica.
 
-## 📁 TarefasService
+## Autora
+**Aline Seravali — Dev Seravali**
+Desenvolvedora Full Stack com foco em desenvolvimento Web, aplicações Front-End e APIs REST.
 
-Responsável pela lógica de negócio:
-
-- Criar tarefas
-- Alterar status
-- Remover tarefas
-- Filtrar tarefas
-
----
-
-## 📁 UI
-
-Responsável pela interface:
-
-- Renderização das tarefas
-- Manipulação visual
-- Alteração de tema
-- Atualização dinâmica da tela
-
----
-
-# 🚀 Tecnologias Utilizadas
-
-- HTML5
-- CSS3
-- JavaScript ES6+
-- Font Awesome
-- localStorage API
-
----
-
-# 📱 Responsividade
-
-O projeto foi desenvolvido pensando em diferentes tamanhos de tela:
-
-- Desktop
-- Tablet
-- Mobile
-
----
-
-# 💡 Diferenciais do Projeto
-
-✨ Código organizado e escalável  
-✨ Separação de responsabilidades  
-✨ Interface moderna  
-✨ Persistência de dados  
-✨ Dark Mode  
-✨ Validações avançadas  
-✨ Sem uso de frameworks  
-✨ Foco em boas práticas Front-End
-
----
-
-# 📚 Aprendizados
-
-Durante o desenvolvimento deste projeto, foram praticados conceitos importantes como:
-
-- Manipulação avançada do DOM
-- Estruturação de aplicações JavaScript
-- Organização de responsabilidades
-- Criação de interfaces reativas sem frameworks
-- Experiência do usuário
-- Persistência local de dados
-
----
-
-# 🔥 Possíveis Melhorias Futuras
-
-- [ ] Drag and Drop
-- [ ] Categorias de tarefas
-- [ ] Datas e prazos
-- [ ] Sistema de prioridades
-- [ ] Integração com API
-- [ ] Autenticação de usuários
-- [ ] Backend completo
-- [ ] Notificações
-- [ ] Animações avançadas
-
----
-
-# 👩‍💻 Desenvolvedora
-
-## Aline Seravali
-
-Desenvolvedora Front-End em evolução constante, criando projetos práticos focados em experiência do usuário, organização de código e desenvolvimento moderno com JavaScript.
-
----
-
-# 🔗 Links do Projeto
-
-## 📂 Repositório
-https://github.com/devseravali/dev-tasks
-
-## 👩‍💻 Perfil GitHub
+**GitHub:**
 https://github.com/devseravali
 
----
+**LinkedIn:**
+https://www.linkedin.com/in/dev-seravali/
 
-# ⭐ Como Executar o Projeto
+**Portfólio:**
+https://devseravali.com
 
-```bash
-# Clone o repositório
-git clone https://github.com/devseravali/dev-tasks.git
-
-# Acesse a pasta
-cd dev-tasks
-
-# Abra o index.html no navegador
-```
-
----
-
-# 📄 Licença
-
-Este projeto está sob a licença MIT.
-
----
-
-<div align="center">
-
-## ⭐ Se gostou do projeto, deixe uma estrela no repositório!
-
-</div>
+Se você gostou do projeto, deixe uma estrela no repositório.
